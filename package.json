@@ -20,7 +20,7 @@
     "mongodb": "^7.5.0",
     "passport": "^0.7.0",
     "passport-google-oauth20": "^2.0.0",
-    "swagger-autogen": "^2.23.7",
+    "swagger-autogen": "^2.9.2",
     "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
