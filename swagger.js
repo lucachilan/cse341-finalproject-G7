@@ -13,7 +13,7 @@ const doc = {
     //schemes: ["http"],
 };
 
-const outputFile = './swagger.json';
+const outputFile = './swagger-output.json';
 const endpointsFiles = ['./routes/index.js'];
 
 // this will generate swagger.json
