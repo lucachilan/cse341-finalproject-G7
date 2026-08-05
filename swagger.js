@@ -5,8 +5,12 @@ const doc = {
         title: 'High School Course Enrollment API',
         description: 'Enroll students and teachers in different classes'
     },
-    host: 'localhost:8080',
-    schemes: ['http'],
+    //Render
+    host: "cse341-finalproject-g7.onrender.com/",
+    schemes: ["https"]
+    //Local
+    //host: "localhost:8080",
+    //schemes: ["http"],
 };
 
 const outputFile = './swagger.json';
