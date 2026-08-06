@@ -25,7 +25,7 @@ const port = process.env.PORT || 8080;
 
 app.use(cors({
     origin: "*",
-    methods: ["GET","POST","PUT","PATCH","DELETE"]
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"]
 }));
 
 app.use(express.json());
@@ -60,6 +60,16 @@ app.use(passport.session());
 // ======================
 // Swagger
 // ======================
+
+// Dynamically set the host based on the environment so that it works correctly 
+// regardless of where the swagger-output.json was generated.
+if (process.env.NODE_ENV === 'production' || process.env.RENDER) {
+    swaggerDocument.host = "cse341-finalproject-g7.onrender.com";
+    swaggerDocument.schemes = ["https"];
+} else {
+    swaggerDocument.host = `localhost:${port}`;
+    swaggerDocument.schemes = ["http"];
+}
 
 app.use(
     "/api-docs",
