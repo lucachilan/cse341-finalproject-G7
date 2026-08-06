@@ -6,7 +6,7 @@ const doc = {
         description: 'Enroll students and teachers in different classes'
     },
     //Render
-    host: "cse341-finalproject-g7.onrender.com/",
+    host: "cse341-finalproject-g7.onrender.com",
     schemes: ["https"]
     //Local
     //host: "localhost:8080",
