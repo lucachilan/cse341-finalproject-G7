@@ -5,6 +5,7 @@ dotenv.config();
 
 let database;
 
+
 const initDb = (callback) => {
     if (database) {
         console.log("Database is already initialized!");
@@ -13,7 +14,7 @@ const initDb = (callback) => {
 
     MongoClient.connect(process.env.MONGODB_URI)
         .then((client) => {
-            database = client.db("rfid-access-api");
+            database = client.db("highschool");
             console.log("MongoDB Connected");
             callback(null, database);
         })

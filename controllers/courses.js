@@ -17,14 +17,26 @@ const getAll = async (req, res) => {
 const getSingle = async (req, res) => {
     //#swagger.tags=['Courses']
     try {
+
         const itemId = new ObjectId(req.params.id);
-        const result = await mongodb.getDb().collection('courses').find({ _id: itemId });
-        result.toArray().then((course) => {
-            res.setHeader('Content-Type', 'application/json');
-            res.status(200).json(course[0]);
-        });
+        const result = await mongodb
+            .getDb()
+            .collection('courses')
+            .findOne({ _id: itemId });
+
+        if (!result) {
+            return res.status(404).json({
+                message: "Course not found"
+            });
+        }
+
+        res.status(200).json(result);
+
     } catch (err) {
-        res.status(500).json({ message: err.message || 'Some error occurred while retrieving the course.' });
+
+        res.status(500).json({
+            message: err.message || "Some error occurred while retrieving the course."
+        });
     }
 };
 
